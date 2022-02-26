@@ -1,4 +1,4 @@
-/* Heaps */
+// Heaps 
 
 // left child: i * 2
 // right child: i * 2 + 1
@@ -6,13 +6,13 @@
 
 let MinHeap = function() {
 	
-	let heap = [null];
+	let heap = [null];  //index 0 = null 
 	
-	this.insert = function(num) {
+	this.insert = function(num) {  // passing  number that will in index 1
 		heap.push(num);
 		if (heap.length > 2) {
-			let idx = heap.length - 1;
-			while (heap[idx] < heap[Math.floor(idx/2)]) {
+			let idx = heap.length - 1; // finding last index and the heap 
+			while (heap[idx] < heap[Math.floor(idx/2)]) { //last item is less than its parent 
 				if (idx >= 1) {
 					[heap[Math.floor(idx/2)], heap[idx]] = [heap[idx], heap[Math.floor(idx/2)]];
 					if (Math.floor(idx/2) > 1) {
